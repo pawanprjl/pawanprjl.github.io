@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Install node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: 16
     
@@ -28,7 +28,7 @@ jobs:
       run: npm run build
 
     - name: upload build files
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ./build
         key: production-build-${{ github.sha }}
@@ -44,7 +44,7 @@ jobs:
 
     steps:
     - name: Download build files
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ./build
         key: production-build-${{ github.sha }}
