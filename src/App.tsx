@@ -1,46 +1,39 @@
-const links = {
-  github: 'https://github.com/pawanprjl',
-  linkedin: '#', // TODO: LinkedIn profile URL
-  contact: '#', // TODO: contact link
-  work: '#', // TODO: work/portfolio link
-}
+import { Contact } from './components/Contact'
+import { Experience } from './components/Experience'
+import { Hero } from './components/Hero'
+import { Projects } from './components/Projects'
+import { WhatIDo } from './components/WhatIDo'
+import { links } from './data'
 
 export default function App() {
   return (
     <div className="page">
-      <header className="header">
-        <a className="wordmark" href="/">
-          pawan.
-        </a>
-        <nav className="nav">
-          <a href={links.github} target="_blank" rel="noreferrer">
-            GitHub
+      <div className="landing">
+        <header className="header">
+          <a className="wordmark" href="/">
+            pawan.
           </a>
-          <a href={links.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-        </nav>
-      </header>
+          <nav className="nav">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href={links.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href={links.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </nav>
+        </header>
+        <Hero />
+      </div>
 
-      <main className="hero">
-        <div className="title-wrap">
-          <p className="tagline">
-            In a world full of AI agents,{' '}
-            <mark>I am thinking on my own !</mark>
-          </p>
-          <h1 className="name">Pawan Parajuli</h1>
-        </div>
-        <p className="intro">
-          Technical Lead who designs reliable backend and cloud systems, and
-          helps teams turn good ideas into products that hold up.
-        </p>
-        <div className="actions">
-          <a className="btn btn-primary" href={links.contact}>
-            Get in touch
-          </a>
-          <a className="btn btn-outline" href={links.work}>
-            See my work
-          </a>
+      <main>
+        <div className="container">
+          <WhatIDo />
+          <Experience />
+          <Projects />
+          <Contact />
         </div>
       </main>
 
